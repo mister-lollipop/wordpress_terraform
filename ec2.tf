@@ -13,8 +13,8 @@ resource "aws_instance" "wordpress" {
   }
 }
 # Security group to allow SSH and HTTP access
-resource "aws_security_group" "allow_ssh_http" {
-  name        = "allow_ssh_http"
+resource "aws_security_group" "allow_ssh_http_new" {
+  name        = "allow_ssh_http_new"
   
   ingress {
     from_port   = 22
