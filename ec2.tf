@@ -7,14 +7,14 @@ resource "aws_instance" "wordpress" {
   associate_public_ip_address = true
   user_data = file("data.sh")
   key_name = "veera"
-  vpc_security_group_ids= [aws_security_group.allow.id]
+  vpc_security_group_ids= [aws_security_group.veera.id]
   tags = {
     Name = "wordpress" 
   }
 }
 # Security group to allow SSH and HTTP access
-resource "aws_security_group" "allow" {
-  name        = "allow"
+resource "aws_security_group" "veera" {
+  name        = "veera"
   
   ingress {
     from_port   = 22
