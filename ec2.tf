@@ -1,20 +1,20 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "us-east-1"
 }
-resource "aws_instance" "wordpress1" {
+resource "aws_instance" "wordpress" {
   ami           = "ami-0a5c3558529277641"
   instance_type = "t2.micro"
   associate_public_ip_address = true
   user_data = file("data.sh")
   key_name = "veera"
-  vpc_security_group_ids= [aws_security_group.allow_ssh_http_new_one_veera.id]
+  vpc_security_group_ids= [aws_security_group.allow.id]
   tags = {
     Name = "wordpress" 
   }
 }
 # Security group to allow SSH and HTTP access
-resource "aws_security_group" "allow_ssh_http_new_veera" {
-  name        = "allow_ssh_http_new_one_veera"
+resource "aws_security_group" "allow" {
+  name        = "allow"
   
   ingress {
     from_port   = 22
