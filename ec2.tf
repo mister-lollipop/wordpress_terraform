@@ -14,7 +14,7 @@ resource "aws_instance" "wordpress1" {
 }
 # Security group to allow SSH and HTTP access
 resource "aws_security_group" "allow_ssh_http_new_veera" {
-  name        = "allow_ssh_http_new_one"
+  name        = "allow_ssh_http_new_one_veera"
   
   ingress {
     from_port   = 22
