@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 resource "aws_instance" "wordpress1" {
   ami           = "ami-0a5c3558529277641"
