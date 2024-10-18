@@ -1,12 +1,12 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-1"
 }
 resource "aws_instance" "wordpress3" {
-  ami           = "ami-0a5c3558529277641"
+  ami           = "ami-0175bdd48fdb0973b"
   instance_type = "t2.micro"
   associate_public_ip_address = true
   user_data = file("data.sh")
-  key_name = "veera"
+  key_name = "keypair"
   vpc_security_group_ids= [aws_security_group.group2.id]
   tags = {
     Name = "wordpress3" 
